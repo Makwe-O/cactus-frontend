@@ -22,7 +22,7 @@ const Collapse: React.FC<CollapseProps> = ({
         style={
           isOpen
             ? { height: `${parentRef.current?.scrollHeight}px` }
-            : { height: '120px' }
+            : { height: '180px' }
         }
       >
         {children}
