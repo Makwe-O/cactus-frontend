@@ -15,7 +15,9 @@ const Form: React.FC<FormProps> = () => {
   const [mutateReq] = useMutation(
     () =>
       axios
-        .get(`/networks/${user}/${repo}/events?per_page=100`)
+        .get(
+          `https://api.github.com/networks/${user}/${repo}/events?per_page=100`
+        )
         .then((res) => mapResult(res.data)),
     {
       onSuccess: (data: GithubIssue[]) => {

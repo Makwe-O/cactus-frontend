@@ -2,7 +2,7 @@ import { GithubEvent, GithubIssue } from './github-events.model';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-export const url = `/networks/microsoft/TypeScript/events?per_page=100`;
+export const url = `https://api.github.com/networks/microsoft/TypeScript/events?per_page=100`;
 export function useGithubIssueComments() {
   return useQuery<GithubIssue[], Error>(url, () =>
     axios.get(url).then((res) => mapResult(res.data))
